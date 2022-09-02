@@ -1,0 +1,140 @@
+<html>
+
+<head><title>CONTACT | THE CHAAT PALATE</title>
+	<script src="Contact.js" language="Javascript" language="text/javascript">
+
+	</script>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		div {
+			position: absolute;
+			margin: 2px 20px 10px 70px;
+			width: 650px;
+			height: 360px;
+			font-size: 20px;
+			align: left;
+			color: yellow;
+			font-family: "Times New Roman", Times, sans-serif;
+		}
+
+		div1 {
+
+			display: block;
+			position: relative;
+			width: 550px;
+			height: 360px;
+			padding: 100px 10px -50px 10px;
+			border-color: yellow;
+			margin: -10px 808px 20px 780px;
+			font-family: "Times New Roman", Times, sans-serif;
+		}
+	</style>
+</head>
+
+<body background="IMG/c.jpg">
+	<center class="ribbon">
+		<font class="ribbon-content" face='Times New Roman'> | &nbsp&nbsp <a href="Home.html" target='frame2'
+				style="text-decoration:none">HOME</a> &nbsp&nbsp| &nbsp&nbsp <a href="About.html" target='frame2'
+				style="text-decoration:none">ABOUT US</a> &nbsp&nbsp | &nbsp&nbsp <a href='Menu.html' target='frame2'
+				style="text-decoration:none">ORDER ONLINE </a> &nbsp&nbsp | &nbsp&nbsp <a href="Contact.html"
+				target='frame2' style="text-decoration:none">CONTACT US</a>
+		</font>
+	</center>
+	<div><br>
+		<font face='Lucida Calligraphy' color='skyblue' size=5>>>Write Us for any Query! <br><br></font>
+		<table width='100%' border='0'>
+			<form name='form1' action="contact1.php" method="POST">
+				<tr>
+					<td width='20%'>
+						<font face='Times New Roman' color='white' size=4>Name:
+					</td>
+					<td>
+						<input type='text' name='Name' size=20 onchange="NameValid(this.value),highlight(this)">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<font face='Times New Roman' color='white' size=4>Email:
+					</td>
+					<td>
+						<input type='text' name='Mail' size=20 onchange="EmailValid(this.value);highlight(this)">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<font face='Times New Roman' color="white' size=4>Contact No.:
+			</td>
+			<td>
+				<input type='text' name='Contac' size=20  onchange=" ContactValid(this.value),highlight(this)">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<font face='Times New Roman' color='white' size=4>Your Question :
+					</td>
+					<td>
+						<input type='text' name='yourque' size=60 onchange="ContactValid(this.value),highlight(this)">
+
+					</td>
+				</tr>
+		</table>
+		<br>
+		<center>
+			<button class="button button1" name="submit" onclick="submit();">SubmitNow</button>&nbsp&nbsp
+
+	</div>
+	</from>
+	<div1><br>
+		<font face='Lucida Calligraphy' color='skyblue' size=5>>> Contact Us! <br><br></font>
+		<hr>
+		<table>
+			<tr>
+				<td width="12%">
+					<a href="mailto:infochaat@gamil.com"><img src="IMG/mail.png" height='40' width='40' name='mail'></a>
+				</td>
+				<td>
+					<font face='Times New Roman' color='yellow' size=3>abhayrpanchal@gamil.com
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="IMG/call.jpg" height='40' width='40' name='call'>
+				</td>
+				<td>
+					<font face='Times New Roman' color='yellow' size=3>+91 9146334963
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="www.facebook.com"><img src="IMG/Facebook.jpg" height='40' width='40' name='fb'></a>
+				</td>
+				<td>
+					<font face='Times New Roman' color='yellow' size=3>www.facebook.com/chaatpalate
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="www.twitter.com"><img src="IMG/twit.jpg" height='40' width='40' name='tweet'>
+				</td>
+				<td>
+					<font face='Times New Roman' color='yellow' size=3>www.twitter.com/chaatpalate
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="www.google.co.in/maps"><img src="IMG/add.jpg" height='40' width='40' name='tweet'>
+				</td>
+				<td>
+					<font face='Times New Roman' color='yellow' size=3>1) Barshi Road - Latur-413512<br>
+						ausa road behind the SBI bank ,latur-413512
+				</td>
+			</tr>
+		</table>
+
+	</div1>
+
+	<br><br>
+	<hr>
+</body>
+
+</html>

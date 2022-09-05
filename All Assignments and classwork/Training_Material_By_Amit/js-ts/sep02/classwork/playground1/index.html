@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function addOld(p1, p2, p3 = 0, p4 = 0) {
+        const result = p1 + p2 + p3 + p4
+        console.log(`result = ${result}`)
+      }
+
+      // variable length argument function
+      // every JS function is variable length argument function
+      function add() {
+        // console.log(arguments)
+        let sum = 0
+        for (const value of arguments) {
+          sum += value
+        }
+
+        console.log(`sum = ${sum}`)
+      }
+
+      add(10, 20)
+      add(10, 20, 30)
+      add(10, 20, 30, 40)
+      add(10, 20, 30, 40, 50)
+      add(10, 20, 30, 40, 50, 60)
+      add(10, 20, 30, '40', 50, 60, 70)
+    </script>
+  </body>
+</html>

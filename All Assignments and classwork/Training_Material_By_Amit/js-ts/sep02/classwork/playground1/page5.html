@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page4</title>
+
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="js/bootstrap.css" />
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      textarea {
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contact Us</h1>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div>
+            <div class="mb-3">
+              <label for="">First Name</label>
+              <input
+                class="form-control"
+                type="text"
+                id="firstName"
+                placeholder="first name" />
+            </div>
+
+            <div class="mb-3">
+              <label for="">Last Name</label>
+              <input
+                class="form-control"
+                type="text"
+                id="lastName"
+                placeholder="last name" />
+            </div>
+
+            <div class="mb-3">
+              <label for="">Email</label>
+              <input
+                class="form-control"
+                type="email"
+                id="email"
+                placeholder="xxxxx@xx.com" />
+            </div>
+
+            <div class="mb-3">
+              <label for="">Phone Number</label>
+              <input
+                class="form-control"
+                type="tel"
+                id="phone"
+                placeholder="phone number" />
+            </div>
+
+            <div class="mb-3">
+              <label for="">Address</label>
+              <textarea
+                rows="5"
+                class="form-control"
+                type="text"
+                id="address"></textarea>
+            </div>
+
+            <div class="mb-3 mt-3">
+              <button onclick="onSave()" class="btn btn-success">Save</button>
+              <button onclick="onCancel()" class="btn btn-danger">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+      function onSave() {
+        const firstName = $('#firstName').val()
+        const lastName = $('#lastName').val()
+        const email = $('#email').val()
+        const phone = $('#phone').val()
+        const address = $('#address').val()
+
+        if (firstName.length == 0) {
+          alert('enter first name')
+        } else if (lastName.length == 0) {
+          alert('enter last name')
+        } else {
+          console.log(`first name = ${firstName}`)
+          console.log(`last name = ${lastName}`)
+          console.log(`email = ${email}`)
+          console.log(`phone = ${phone}`)
+          console.log(`address = ${address}`)
+
+          // go to the result html with user input
+          const url = `result.html?firstName=${firstName}&lastName=${lastName}&email=${email}&phone=${phone}&address=${address}`
+          window.location = url
+        }
+      }
+
+      function onCancel() {}
+    </script>
+  </body>
+</html>

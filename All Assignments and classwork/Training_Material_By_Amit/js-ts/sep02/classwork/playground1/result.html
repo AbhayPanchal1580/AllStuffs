@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <link rel="stylesheet" href="js/bootstrap.css" />
+  </head>
+  <body onload="onPageLoad()">
+    <div class="container">
+      <h1>Result</h1>
+      <div>
+        <div class="mb-3">
+          <label for="">First Name</label>
+          <input
+            readonly
+            class="form-control"
+            type="text"
+            id="firstName"
+            placeholder="first name" />
+        </div>
+
+        <div class="mb-3">
+          <label for="">Last Name</label>
+          <input
+            readonly
+            class="form-control"
+            type="text"
+            id="lastName"
+            placeholder="last name" />
+        </div>
+
+        <div class="mb-3">
+          <label for="">Email</label>
+          <input
+            readonly
+            class="form-control"
+            type="email"
+            id="email"
+            placeholder="xxxxx@xx.com" />
+        </div>
+
+        <div class="mb-3">
+          <label for="">Phone Number</label>
+          <input
+            readonly
+            class="form-control"
+            type="tel"
+            id="phone"
+            placeholder="phone number" />
+        </div>
+
+        <div class="mb-3">
+          <label for="">Address</label>
+          <textarea
+            readonly
+            rows="5"
+            class="form-control"
+            type="text"
+            id="address"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function onPageLoad() {
+        const url = String(window.location)
+        console.log(`url = ${url}`)
+
+        const parts = url.split('?')
+        const queryString = parts[1]
+
+        const input = {}
+        const pairs = queryString.split('&')
+        for (const pair of pairs) {
+          const temp = pair.split('=')
+          input[temp[0]] = temp[1]
+        }
+
+        console.log(input)
+
+        document.getElementById('firstName').value = input['firstName']
+        document.getElementById('lastName').value = input['lastName']
+        document.getElementById('email').value = input['email']
+        document.getElementById('phone').value = input['phone']
+        document.getElementById('address').value = input['address']
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page1</title>
+  </head>
+  <body>
+    <h1>welcome to js</h1>
+    <button onclick="showAlert()">show Alert</button>
+    <button onclick="showConfirm()">show confirm</button>
+    <button onclick="showInput()">show prompt</button>
+
+    <script>
+      // dialog
+      // - alert
+      // - confirm
+      // - prompt
+
+      function showAlert() {
+        console.log(`button clicked`)
+        alert('button clicked')
+      }
+
+      function showConfirm() {
+        const answer = confirm('are you sure you want to delete ?')
+        if (answer) {
+          console.log('delete this...')
+        } else {
+          console.log('do not delete this')
+        }
+      }
+
+      function showInput() {
+        const name = prompt('enter your name')
+        console.log(`name: ${name}`)
+      }
+    </script>
+  </body>
+</html>

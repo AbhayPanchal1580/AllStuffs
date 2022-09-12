@@ -1,6 +1,6 @@
 /*
 
-// class definition
+//class definition
 class Person {
     int age;
     String name;

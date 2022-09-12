@@ -1,11 +1,12 @@
 // code reuse
 // - association (has-a)
-//   - one object gets shared by creating outside of another object
-//   - types
-//     - aggregation (has-a)
-//       - loose coupling / weak relationship
-//     - composition (composed-of or part-of):
-//       - tight coupling / strong relationship
+// - one object gets shared by creating outside of another object
+// - types
+// - aggregation (has-a)
+// - loose coupling / weak relationship
+// - composition (composed-of or part-of)
+// - tight coupling / strong relationship
+
 
 class Address {
   city: string = ''

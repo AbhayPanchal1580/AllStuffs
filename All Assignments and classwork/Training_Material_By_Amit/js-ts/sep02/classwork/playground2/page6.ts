@@ -33,3 +33,11 @@ class Mobile {
 
 const m1 = new Mobile('Galaxy S22', 'Samsung', 98000)
 console.log(m1)
+
+
+
+//assignment 6
+class student{
+  rollno:number
+  studentName: string
+}

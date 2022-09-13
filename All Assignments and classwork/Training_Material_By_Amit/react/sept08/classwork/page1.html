@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page1</title>
+  </head>
+  <body>
+    <h1>Vanilla website</h1>
+    <div>
+      <input id="firstName" type="text" placeholder="first name" />
+      <button onclick="greetUser()">Greet user</button>
+    </div>
+
+    <div id="message">message:</div>
+
+    <hr />
+
+    <button onclick="showAddress()">show address</button>
+    <div id="address">Address:</div>
+    <hr />
+
+    <div>
+      <div>
+        <label for="">Id</label>
+        <input type="text" id="id" />
+      </div>
+
+      <div>
+        <label for="">Title</label>
+        <input type="text" id="title" />
+      </div>
+
+      <div>
+        <label for="">Price</label>
+        <input type="text" id="price" />
+      </div>
+
+      <div>
+        <label for="">Description</label>
+        <input type="text" id="description" />
+      </div>
+    </div>
+    <button onclick="showTable()">add product</button>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody id="products"></tbody>
+    </table>
+
+    <script>
+      // global variable to hold all the products
+      const products = []
+
+      function showAddress() {
+        const address = 'pune'
+        document.getElementById('address').innerHTML = `Address: ${address}`
+      }
+
+      function greetUser() {
+        //alert('button clicked')
+        const firstName = document.getElementById('firstName').value
+        console.log('welcome ' + firstName)
+
+        // get the div and update the message
+        document.getElementById(
+          'message'
+        ).innerHTML = `<h1>Welcome ${firstName}</h1>`
+      }
+
+      function showTable() {
+        const id = document.getElementById('id').value
+        const title = document.getElementById('title').value
+        const price = document.getElementById('price').value
+        const description = document.getElementById('description').value
+
+        // add the product inside the collection
+        products.push({
+          id,
+          title,
+          description,
+          price,
+        })
+
+        let rows = ``
+        for (const product of products) {
+          rows += `<tr>`
+          rows += `<td>${product['id']}</td>`
+          rows += `<td>${product['title']}</td>`
+          rows += `<td>${product['price']}</td>`
+          rows += `<td>${product['description']}</td>`
+          rows += `</tr>`
+        }
+
+        console.log(rows)
+        document.getElementById('products').innerHTML = rows
+      }
+    </script>
+  </body>
+</html>

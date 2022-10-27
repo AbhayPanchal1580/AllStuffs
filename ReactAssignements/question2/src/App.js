@@ -8,7 +8,7 @@ import Question4 from "./components/Question4";
 function App() {
   return (
     <div className="App">
-      <Question2 />
+      <Question2/>
     </div>
   );
 }

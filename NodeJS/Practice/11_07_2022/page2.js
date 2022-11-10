@@ -7,4 +7,4 @@ page1.addFunction(10, 20)
 page1.subtractFunction(20, 30)
 
 // use the variable/constant from page3
-console.log(`pi = ${page1.pi}`)
+// console.log(`pi = ${page1.pi}`)

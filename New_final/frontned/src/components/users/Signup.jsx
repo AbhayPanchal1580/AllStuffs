@@ -95,7 +95,7 @@ const Signup = () => {
 
           <label className="m-1 row">Password : </label>
           <input
-            type="text"
+            type="password"
             value={password}
             onChange={onChangePassword}
             className="m-1 row form-control"
@@ -105,7 +105,7 @@ const Signup = () => {
 
           <label className="m-1 row">Confirm Password : </label>
           <input
-            type="text"
+            type="password"
             value={confirmPassword}
             onChange={onChangeConfirmpassword}
             className="m-1 row form-control"

@@ -31,7 +31,7 @@ const Login = () => {
 
         //export the fname to blogs pages.
         window.alert("Login Successful ...!!!");
-        navigate("/#");
+        navigate("/blogs/createBlog");
       })
       .catch((error) => {
         console.log(error);

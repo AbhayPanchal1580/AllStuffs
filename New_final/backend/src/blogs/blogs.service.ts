@@ -63,5 +63,3 @@ export class BlogsService {
     return this.getBlogs();
   }
 }
-
-

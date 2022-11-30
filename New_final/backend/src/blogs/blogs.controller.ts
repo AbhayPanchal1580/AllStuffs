@@ -18,7 +18,7 @@ export class BlogsController {
     return this.blogsService.getBlogs();
   }
 
-  @Get(':id')
+  @Get('/single/:id')
   getBlogDetails(@Param('id') id: number) {
     return this.blogsService.getBlogDetails(id);
   }

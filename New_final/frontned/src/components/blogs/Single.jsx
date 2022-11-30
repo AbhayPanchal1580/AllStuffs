@@ -1,20 +1,27 @@
 import axios from "axios";
 import { React, useState, useEffect } from "react";
-import { Navigate, useNavigate, Link } from "react-router-dom";
+import { Navigate, useNavigate, Link, createSearchParams } from "react-router-dom";
 import Navbar from "../blogs/Navbar";
+import {useParams} from 'react-router-dom';
 
-const Blog = () => {
+const Single = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
     getAllBlogs();
   }, []);
+  const params=useParams();
+  console.log(params)
 
-  // const navigate = useNavigate();
+ 
+  const navigate = useNavigate();
+
+  
 
   const getAllBlogs = () => {
+    
     axios
-      .get("http://localhost:3000/blogs")
+      .get(`http://localhost:3000/blogs/single/${params.id}`)
       .then((response) => {
         const data = response.data;
         console.log(data);
@@ -24,6 +31,13 @@ const Blog = () => {
         console.log(error);
       });
   };
+
+  // const viewBlog = (abc) => {
+  //   console.log("hello on click ");
+  //   console.log(`abc: ${abc}`);
+  //   // console.log(`blogs id: ${data.id}`)
+  //   // navigate('/blogs/getBlog')
+  // };
 
   return (
     // <div>
@@ -40,46 +54,12 @@ const Blog = () => {
       <Navbar />
       <div className="container" style={{ padding: "50px", maxWidth: "80%" }}>
         <nav className="m-5 mt-1" style={{ textAlign: "center" }}>
-          <div class="container-fluid">
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              ></input>
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
+          <div class="container-fluid"></div>
         </nav>
-        <div className="container">
-          {blogs.map((blog) => {
-            return (
-              <div
-                className="container mt-2 p-3"
-                style={{
-                  border: "2px solid",
-                  padding: "10px",
-                  overflow: "hidden",
-                }}
-              >
-                <h3>
-                  <b>{blog.title}</b>
-                </h3>
-                <b>Created on:</b> {blog.date}
-                <p style={{ marginTop: "5px" }}>{blog.contents}</p>
-                <div className="readmore">
-                  {" "}
-                  <Link to={{ pathname: `/blogs/single/${blog.id}` }}>
-                    {" "}
-                    <b>Read more...</b>
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
+        <div className="container"  style={{ border: "2px solid",height:"",overflow:"hidden"}}>
+          <h3>{blogs.title}</h3>
+          <b>Created on:</b> {blogs.date}
+          <p style={{ marginTop: "5px" }}>{blogs.contents}</p>
         </div>
         {/* <table className="table table-striped">
           <thead>
@@ -120,4 +100,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Single;

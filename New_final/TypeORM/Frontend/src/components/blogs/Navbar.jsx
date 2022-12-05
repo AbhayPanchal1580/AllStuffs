@@ -1,14 +1,17 @@
 import React from "react";
 import "./Navbar.css";
+import { useParams } from "react-router-dom";
+
+
 
 const Navbar = () => {
-  
+  const params=useParams();
   return (
     <div className="container">
       <div style={{ textAlign: "end"}}>
-        <div class="dropdown">
-          <button class="dropbtn">Welcome</button>
-          <div class="dropdown-content">
+        <div className="dropdown">
+          <button className="dropbtn">Welcome <b>{params.firstName}</b></button>
+          <div className="dropdown-content">
             <a href="/blogs/createBlog">Create Blog</a>
             <a href="/blogs/getAllBlogs">Display all blogs</a>
             <a href="/users/profile">Profile</a>

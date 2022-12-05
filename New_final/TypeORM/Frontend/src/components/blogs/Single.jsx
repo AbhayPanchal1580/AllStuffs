@@ -54,7 +54,7 @@ const Single = () => {
       <Navbar />
       <div className="container" style={{ padding: "50px", maxWidth: "80%" }}>
         <nav className="m-5 mt-1" style={{ textAlign: "center" }}>
-          <div class="container-fluid"></div>
+          <div className="container-fluid"></div>
         </nav>
         <div className="container"  style={{ border: "2px solid",height:"",overflow:"hidden"}}>
           <h3>{blogs.title}</h3>
@@ -84,7 +84,7 @@ const Single = () => {
                   <td>
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      className="btn btn-secondary"
                       onClick={viewBlog(blog.id)}
                     >
                       View Blog

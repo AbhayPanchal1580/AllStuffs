@@ -7,6 +7,8 @@ const Login = () => {
   const [userPassword, setuserPassword] = useState("");
   const navigate = useNavigate();
 
+
+
   const onChangeEmail = (e) => {
     setuserEmail(e.target.value);
   };
@@ -16,22 +18,21 @@ const Login = () => {
   };
 
   const onSubmit = () => {
-    
     axios
       .post("http://localhost:3000/users/login", {
         email: userEmail,
         password: userPassword,
       })
-      
+
       .then((response) => {
         const data = response.data;
-    console.log(data);
-
-      
+        console.log(data);
+        // localStorage.setItem("username", data.firstName);
 
         //export the fname to blogs pages.
         window.alert("Login Successful ...!!!");
-        navigate("/blogs/createBlog");
+        navigate("/blogs/createBlog/"+data.firstName);
+        
       })
       .catch((error) => {
         console.log(error);

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { React, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const current = new Date();
@@ -8,10 +8,18 @@ const newDate= `${current.getDate()}/${current.getMonth()+1}/${current.getFullYe
   
 
 const CreateBlog = () => {
+
+  const params=useParams();
+
+
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
   const [tags, setTags] = useState("");
-  // const [date, setDate] = useState("");
+  // const [user, setUser] = useState();
+
+  const user=params.firstName;
+
+  console.log(user)
 
   const navigate = useNavigate();
 
@@ -37,7 +45,8 @@ const date= `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear(
         title: title,
         contents: contents,
         tags: tags,
-        date :date
+        date :date,
+        createdBy:user
       })
       .then((response) => {
         const data = response.data;

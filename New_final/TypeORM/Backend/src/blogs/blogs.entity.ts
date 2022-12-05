@@ -17,4 +17,7 @@ export class BlogEntity extends BaseEntity {
 
   @Column()
   date: string;
+
+  @Column()
+  createdBy: string;
 }

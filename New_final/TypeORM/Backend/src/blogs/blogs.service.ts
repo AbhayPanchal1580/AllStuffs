@@ -17,6 +17,8 @@ export class BlogsService {
     blog.title = createBlogDto.title;
     blog.contents = createBlogDto.contents;
     blog.tags = createBlogDto.tags;
+    blog.date = createBlogDto.date;
+    blog.createdBy = createBlogDto.createdBy;
 
     await blog.save();
 

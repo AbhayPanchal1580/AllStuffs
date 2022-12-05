@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
-export class UpdateBlogDto {
+export class CreateBlogDto {
   title: string;
   contents: string;
   tags: string;
-  date:string;
+  date: string;
+  createdBy:string;
 }

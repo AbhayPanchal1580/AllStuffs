@@ -31,6 +31,10 @@ export class UsersService {
     return user;
   }
 
+  async getUsers() {
+    return await this.usersRepository.find();
+  }
+
   async login(loginDto: LoginDto) {
     const condition = {
       email: loginDto.email,
